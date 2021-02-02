@@ -2,7 +2,7 @@ from django.contrib.auth import login, authenticate, logout
 from django.contrib.auth.forms import UserCreationForm, AuthenticationForm
 from django.shortcuts import render, redirect, HttpResponse
 
-def index(request):
+def main(request):
     form = AuthenticationForm
      
     return render(request, 'login1.html', {'form': form})
@@ -16,7 +16,7 @@ def register(request):
             raw_password = form.cleaned_data.get('password1')
             user = authenticate(username=username, password=raw_password)
             login(request, user)
-            return redirect("/dashview")
+            return redirect("index")
     else:
         form = UserCreationForm()
     return render(request, 'signup2.html', {'form': form})
@@ -28,12 +28,12 @@ def log_on(request):
     
     if user is not None:
         login(request, user)
-        return redirect('dashview')
+        return redirect('index')
     else:
         return HttpResponse("invalid")
 
 def log_out(request):    
     logout(request)    
-    return redirect('index')
+    return redirect('main')
 
     

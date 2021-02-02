@@ -11,4 +11,7 @@ from . import views
 
 urlpatterns = [
     path('', views.index, name='index'),
+    path('/tutreg', views.tutor_reg, name='tutor_reg'),
+    path('/stureg', views.student_reg, name='stureg')
+       
     ]

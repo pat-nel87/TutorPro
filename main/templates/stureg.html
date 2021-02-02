@@ -24,16 +24,16 @@
 
     </div>
     <div class="col-sm">
-      <form class="" action="login/log_on" method="post">
+      <form class="" action="stureg" method="post">
         {% csrf_token %}
         {{ form.as_p }}
         <!--  ".as_p" is an example of an option you can attach to the form inputs
         "as_table" and "as_ul" are a few others...-->
-        <input class="btn btn-success" type="submit" value="login">
+        <input class="btn btn-success" type="submit" value="Submit">
 
       </form>
       <br>
-      <a class = "btn btn-success" href="/login/register"> New User? </a>
+    <!---<a class = "btn btn-success" href="/login/register"> </a>--->
     </div>
     <div class="col-sm">
 

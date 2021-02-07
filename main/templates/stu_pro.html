@@ -40,14 +40,14 @@
 
     </div>
     <!-- start of Rene code -->
+    <div id="this_student">
+        <h2>{{this_tutor.first_name}}'s Student Profile</h2>
+    </div>
     <div>
-        <h3>Subjects to be Tutored</h3>
-        <!-- insert code to populate subjects for tutoring -->
         {% for subject in all_subjects %}
         <p>{{subject.name}}</p>
         <p>{{subject.tutored_by}}</p>
         {% endfor %}
-        <h4>Add a new subject for tutoring</h4>
     </div>
     <div>
         <h3>Tutors Available for Support</h3>
@@ -57,6 +57,9 @@
             <p>{{tutor.desc}}</p>
             <p>From {{tutor.city}}, {{tutor.state}}</p>
             <p>Posted at: </p>
+            <p>
+                <a href="/index/profile_tutor/{{tutor.id}}">View Profile</a>
+            </p>
         </div>
         {% endfor %}
     </div>

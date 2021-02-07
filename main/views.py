@@ -72,9 +72,13 @@ def tutor_pro(request):
     return render(request, 'tutor_pro.html', context)
 
 def stu_pro(request):
+    user = request.user
+    this_user = Student_Profile.objects.filter(email=user)
+    print('CHECK', this_user[0])
     all_tutors = Tutor_Profile.objects.all()
     context = {
         'all_tutors': all_tutors,
+        'this_tutor': this_user[0],
     }
     return render(request,'stu_pro.html', context)
 
@@ -84,3 +88,11 @@ def profile_student(request, stu_id):
         'this_student': this_student,
     }
     return render(request,'profile_student.html', context)
+
+def profile_tutor(request, tutor_id):
+    this_tutor = Tutor_Profile.objects.get(id=tutor_id)
+    print('check', this_tutor)
+    context = {
+        'this_tutor': this_tutor,
+    }
+    return render(request,'profile_tutor.html', context)

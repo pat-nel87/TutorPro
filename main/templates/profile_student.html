@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Specific User Profile</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
+
+</head>
+
+<body>
+    <div>
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+            <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="/index">Home</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="/index/tutreg">Tutor Registration</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="/index/tutor_pro">Tutor Profile</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="/index/stureg">Student Registration</a>
+            </li>
+
+            <li class="nav-item">
+                <a class="nav-link" href="/index/stu_pro">Student Profile</a>
+            </li>
+
+            <li class="nav-item">
+                <a class="nav-link" href="/login/log_out">Log out</a>
+            </li>
+
+        </ul>
+
+    </div>
+    <div>
+        <h2>{{this_student.first_name}} {{this_student.last_name}}'s Profile</h2>
+        <h3>Located in {{this_student.city}}, {{this_student.state}}</h3>
+        <p>Description: {{this_student.desc}}</p>
+        <p>
+            <a href="#">Contact</a>
+            <a href="/index/tutor_pro">Back</a>
+        </p>
+    </div>
+</body>
+
+</html>

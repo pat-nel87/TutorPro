@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
+
+    <title>Welcome {{user.username}}</title>
+</head>
+
+<body>
+    <div>
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+            <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="/index">Home</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="/index/tutreg">Tutor Registration</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="/index/tutor_pro">Tutor Profile</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="/index/stureg">Student Registration</a>
+            </li>
+
+            <li class="nav-item">
+                <a class="nav-link" href="/index/stu_pro">Student Profile</a>
+            </li>
+
+            <li class="nav-item">
+                <a class="nav-link" href="/login/log_out">Log out</a>
+            </li>
+
+        </ul>
+
+    </div>
+    <!-- start of Rene code -->
+    <div id="this_student">
+        <h2>{{this_tutor.first_name}}'s Profile</h2>
+    </div>
+    <div>
+        <h3>Subjects Needing Tutoring</h3>
+        <!-- insert code to populate subjects for tutoring -->
+        {% for subject in all_subjects %}
+        <p>{{subject.name}}</p>
+        <p>{{subject.requested_by}}</p>
+        {% endfor %}
+        <h4>Add a new subject for tutoring</h4>
+    </div>
+    <div>
+        <h3>Students Posted for Support</h3>
+        {% for student in all_students %}
+        <div>
+            <h4>{{student.first_name}} {{student.last_name}}</h4>
+            <p>{{student.desc}}</p>
+            <p>From {{student.city}}, {{student.state}}</p>
+            <p>Posted at: {{student.userpost}}</p>
+            <p>
+                <a href="/index/profile_student/{{student.id}}">View profile</a>
+            </p>
+        </div>
+        {% endfor %}
+    </div>
+    <!-- end of Rene code -->
+</body>
+
+</html>

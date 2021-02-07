@@ -39,7 +39,8 @@ class Post(models.Model):
     text = models.TextField()
     posted_by = models.ForeignKey(User, related_name="userpost", on_delete=models.CASCADE)
     subject_listed = models.ManyToManyField(Subject, related_name="subject_request")
-    
+    created_at = models.DateTimeField(auto_now_add=True)
+    updated_at = models.DateTimeField(auto_now_add=True)
 
 
     

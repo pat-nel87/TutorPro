@@ -35,5 +35,3 @@ def log_on(request):
 def log_out(request):    
     logout(request)    
     return redirect('main')
-
-    
